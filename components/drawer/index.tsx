@@ -1,4 +1,6 @@
+import Router from "next/router";
 import React, { FunctionComponent, memo } from "react";
+import { Routes } from "../../utils/common";
 import style from "./style/drawer.module.scss";
 
 type DrawerProps = {
@@ -11,7 +13,7 @@ const Drawer: FunctionComponent<DrawerProps> = (props) => {
     <nav className={style.drawer}>
       <div className="container">
         <div className="columns">
-          <div className="col-1">
+          <div className="col-1 c-pointer" onClick={() => Router.push(Routes.HOME)}>
             <span className="icon text-color-secondary" data-icon="&#xf1b7;" />
           </div>
           {React.Children.map(props.children, (children) => (
