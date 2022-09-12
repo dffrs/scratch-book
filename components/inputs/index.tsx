@@ -6,10 +6,16 @@ type InputProps = { label?: string } & DetailedHTMLProps<InputHTMLAttributes<HTM
 const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   const id = useId();
   return (
-    <>
-      <input ref={ref} id={id} {...props} className={style.input} />
+    <div className="p-relative">
+      <input
+        ref={ref}
+        id={id}
+        {...props}
+        placeholder={(props.placeholder && props.placeholder) || props.label}
+        className={style.input}
+      />
       {(props.label && <label htmlFor={id}>{props.label}</label>) || null}
-    </>
+    </div>
   );
 });
 

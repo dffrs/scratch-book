@@ -43,6 +43,7 @@ body {
     // animation timers
     --animation-time: 250ms;
     --animation-delay: 500ms;
+    --animation-curve: cubic-bezier(0.68, -0.55, 0.27, 1.55);
     // font
     --font-family: #{fonts.$font-family};
     --font-weight-light: #{fonts.$font-weight-light};
