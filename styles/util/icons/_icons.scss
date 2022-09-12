@@ -1,0 +1,51 @@
+.icon[data-icon] {
+    pointer-events: none;
+}
+
+span.icon[data-icon] {
+    display: inline-flex;
+    height: 100%;
+    align-items: center;
+    pointer-events: none;
+    background: transparent;
+}
+
+.icon:before {
+    font-family: "Material Icons";
+    content: attr(data-icon);
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "liga";
+    pointer-events: none;
+    transform: scale(var(--icon-size));
+}
+
+.icon.x05:before {
+    transform: scale(calc(var(--icon-size) * 0.5));
+}
+
+.icon.x075:before {
+    transform: scale(calc(var(--icon-size) * 0.75));
+}
+
+.icon.x2:before {
+    transform: scale(calc(var(--icon-size) * 2));
+}
+
+.icon.x3:before {
+    transform: scale(calc(var(--icon-size) * 3));
+}
+
+.icon.x4:before {
+    transform: scale(calc(var(--icon-size) * 4));
+}

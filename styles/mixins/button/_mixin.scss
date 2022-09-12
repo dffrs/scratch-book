@@ -1,0 +1,7 @@
+@mixin buttonStyles() {
+    cursor: pointer;
+    color: var(--primary-color);
+    &:active {
+        color: var(--secondary-color);
+    }
+}

@@ -1,0 +1,38 @@
+$font-family:-apple-system,
+BlinkMacSystemFont,
+Segoe UI,
+Roboto,
+Oxygen,
+Ubuntu,
+Cantarell,
+Fira Sans,
+Droid Sans,
+Helvetica Neue,
+sans-serif;
+$font-weight-light: lighter;
+$font-weight-normal: normal;
+$font-weight-bold: bold;
+$font-weight-bolder: bolder;
+.font-light {
+    font-weight: $font-weight-light;
+}
+
+.font-medium {
+    font-weight: $font-weight-normal;
+}
+
+.font-bold {
+    font-weight: $font-weight-bold;
+}
+
+.font-bolder {
+    font-weight: $font-weight-bolder;
+}
+
+$text-color: (primary: var(--primary-color), secondary: var(--secondary-color), neutral: var(--neutral-color), contrast: var(--contrast-color));
+@each $key,
+$value in $text-color {
+    .text-color-#{$key} {
+        color: $value;
+    }
+}

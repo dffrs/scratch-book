@@ -1,0 +1,18 @@
+button,
+.button {
+    display: inline-block;
+    font-family: var(--font-family);
+    font-weight: var(font-weight-normal);
+    background-color: var(--secondary-color);
+    color: var(--contrast-color);
+    outline: none;
+    border-width: 0;
+    border-radius: .2em;
+    padding: .5em 1em;
+    cursor: pointer;
+    transition: var(--color-transitions);
+    max-width: 10ch;
+    &:hover {
+        background-color: var(--neutral-color);
+    }
+}

@@ -1,0 +1,21 @@
+.effect {
+    border-radius: 100%;
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 150%;
+        translate: (50%);
+        border-radius: 100%;
+        background-color: var(--secondary-color) !important;
+        opacity: 50%;
+        transition: .5s;
+        transform: scale(0);
+    }
+    &:hover::after {
+        transform: scale(2);
+    }
+}

@@ -1,0 +1,59 @@
+@use "variables/fonts/fonts" as fonts;
+@use "mixins/button/mixin" as buttonMixin;
+@use "elements/buttons/buttons";
+@use "variables/colors/colors" as colors;
+@use "util/position/position";
+@use "util/display/display";
+@use "util/layout/layout";
+@use "util/icons/icons";
+@use "util/effects/effects";
+@font-face {
+    font-family: "Material Icons";
+    src: url("/fonts/MaterialIcons-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    background: none;
+    font-family: fonts.$font-family;
+    color: colors.$primary-color;
+    background-color: colors.$contrast-color;
+}
+
+:root {
+    // colors
+    --primary-color: #{colors.$primary-color};
+    --secondary-color: #{colors.$secondary-color};
+    --neutral-color: #{colors.$neutral-color};
+    --contrast-color: #{colors.$contrast-color};
+    --color-transitions: #{colors.$color-transitions};
+    // animation timers
+    --animation-time: 250ms;
+    --animation-delay: 500ms;
+    // font
+    --font-family: #{fonts.$font-family};
+    --font-weight-light: #{fonts.$font-weight-light};
+    --font-weight-normal: #{fonts.$font-weight-normal};
+    --font-weight-bold: #{fonts.$font-weight-bold};
+    --font-weight-bolder: #{fonts.$font-weight-bolder};
+    // icon
+    --icon-size: 1.625;
+    // units
+    --unit-1: .5rem;
+    --unit-2: 1rem;
+    --unit-3: 1.5rem;
+    --unit-4: 2rem;
+}

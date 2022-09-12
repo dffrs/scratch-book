@@ -1,0 +1,19 @@
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding: 0 var(--unit-2);
+}
+
+.columns {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+$grid-columns: 12;
+@for $i from 1 through $grid-columns {
+    .col-#{$i} {
+        width: percentage($i / $grid-columns);
+    }
+}
