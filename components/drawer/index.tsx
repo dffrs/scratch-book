@@ -3,7 +3,7 @@ import style from "./style/drawer.module.scss";
 
 type DrawerProps = {
   isOpened?: boolean;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 };
 
 const Drawer: FunctionComponent<DrawerProps> = (props) => {

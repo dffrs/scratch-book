@@ -1,8 +1,12 @@
 .drawer {
+    display: flex;
+    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
+    max-height: 2em;
+    min-height: 2em;
     background-color: var(--primary-color);
     z-index: 100;
 }
