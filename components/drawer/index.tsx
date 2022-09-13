@@ -14,7 +14,7 @@ const Drawer: FunctionComponent<DrawerProps> = (props) => {
       <div className="container">
         <div className="columns">
           <div className="col-1 c-pointer" onClick={() => Router.push(Routes.HOME)}>
-            <span className="icon text-color-secondary" data-icon="&#xf1b7;" />
+            <span className="icon text-color-secondary" data-icon="&#xead6;" />
           </div>
           {React.Children.map(props.children, (children) => (
             <div className="col-3">{children}</div>

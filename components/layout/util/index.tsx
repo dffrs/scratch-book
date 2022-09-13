@@ -4,7 +4,7 @@ type ButtonsName = "inputs";
 
 const drawerButtons: Array<React.ReactElement> = [
   <Button key="inputs" name="inputs">
-    Input
+    Inputs
   </Button>,
 ];
 
