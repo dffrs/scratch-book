@@ -1,13 +1,10 @@
 import { NextPage } from "next";
-import { memo, useEffect, useRef } from "react";
+import { memo, useRef } from "react";
 import Input from "../../components/inputs";
 import Select, { SelectRef } from "../../components/inputs/select";
 
 const InputsPage: NextPage = () => {
   const ref = useRef<SelectRef>(null);
-  useEffect(() => {
-    console.log("ref", ref.current?.value);
-  }, [ref]);
   return (
     <div style={{ height: "100vh", position: "relative" }}>
       <div

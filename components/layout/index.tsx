@@ -1,5 +1,5 @@
 import Router from "next/router";
-import React, { FunctionComponent, memo, useCallback } from "react";
+import React, { FunctionComponent, memo, useCallback, useMemo } from "react";
 import { Routes } from "../../utils/common";
 import Drawer from "../drawer";
 import { ButtonsName, drawerButtons } from "./util";
@@ -20,16 +20,18 @@ const Layout: FunctionComponent<LayoutProps> = ({ children }) => {
         })(buttonName);
     }
   }, []);
+  const buttonsToRender = useMemo(() => {
+    return drawerButtons.map((button) => {
+      return React.cloneElement<React.HTMLProps<HTMLButtonElement>>(button, {
+        onClick: () => handleClick(button),
+      });
+    });
+  }, [handleClick]);
+  const childrenToRender = useMemo(() => React.Children.map(children, (children) => children), [children]);
   return (
     <>
-      <Drawer>
-        {drawerButtons.map((button) => {
-          return React.cloneElement<React.HTMLProps<HTMLButtonElement>>(button, {
-            onClick: () => handleClick(button),
-          });
-        })}
-      </Drawer>
-      <main>{React.Children.map(children, (children) => children)}</main>
+      <Drawer>{buttonsToRender}</Drawer>
+      <main>{childrenToRender}</main>
     </>
   );
 };
