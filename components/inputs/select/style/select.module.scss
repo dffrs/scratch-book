@@ -11,8 +11,23 @@
     border-bottom: 1px solid var(--primary-color);
     border-left: 0;
     cursor: pointer;
-    &:hover>div:first-child {
-        transform: scaleY(1);
+    &::after {
+        font-family: "Material Icons";
+        content: "keyboard_arrow_down";
+        position: absolute;
+        right: 0;
+        padding: 0;
+        margin: 0;
+        background-color: transparent;
+        transition: transform var(--animation-time) var(--animation-curve);
+    }
+    &:hover {
+        &::after {
+            transform: rotate(180deg);
+        }
+        &>div:first-child {
+            transform: scaleY(1);
+        }
     }
     &>div:first-child {
         transition: calc(var(--animation-time) * 1.5) var(--animation-curve);
