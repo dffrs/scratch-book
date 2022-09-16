@@ -34,6 +34,16 @@ body {
     font-family: fonts.$font-family;
     color: colors.$primary-color;
     background-color: colors.$contrast-color;
+     ::-webkit-scrollbar {
+        width: var(--unit-1);
+    }
+     ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+     ::-webkit-scrollbar-thumb {
+        background-color: var(--neutral-color);
+        border-radius: var(--unit-3);
+    }
 }
 
 :root {
