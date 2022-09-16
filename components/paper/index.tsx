@@ -13,7 +13,7 @@ type PaperProps = {
   backgroundColor?: "primary" | "secondary" | "neutral" | "contrast";
 };
 
-const Paper: FunctionComponent<PaperProps> = ({ header, body, footer, backgroundColor = "primary" }) => {
+const Paper: FunctionComponent<PaperProps> = ({ header, body, footer = <></>, backgroundColor = "primary" }) => {
   return (
     <div style={{ backgroundColor: `var(--${backgroundColor}-color)` }} className={style.paper}>
       {header && (

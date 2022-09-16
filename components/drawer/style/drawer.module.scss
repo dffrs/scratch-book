@@ -8,5 +8,7 @@
     max-height: var(--unit-4);
     min-height: var(--unit-4);
     background-color: var(--primary-color);
+    border-bottom-left-radius: var(--unit-1);
+    border-bottom-right-radius: var(--unit-1);
     z-index: 999999;
 }
