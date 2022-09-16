@@ -17,6 +17,10 @@
         padding: var(--unit-1) 0;
         min-height: fit-content;
         color: var(--neutral-color);
+        & *::selection {
+            color: var(--primary-color);
+            background-color: var(--contrast-color);
+        }
     }
     & .header {
         position: relative;

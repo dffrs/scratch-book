@@ -8,16 +8,7 @@ const InputsPage: NextPage = () => {
   const ref = useRef<SelectRef>(null);
   return (
     <Paper
-      header={
-        <div className="container">
-          <div className="columns">
-            <div className="col-11 d-flex just-cont-start">inputs</div>
-            <div className="col-1 d-flex just-cont-end">
-              <span className="icon" data-icon="&#xeb7c;" />
-            </div>
-          </div>
-        </div>
-      }
+      header={{ text: "inputs", icon: "check" }}
       body={
         <div style={{ height: "100%" }}>
           <Input type="checkbox" label="Click me" />

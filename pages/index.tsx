@@ -5,16 +5,7 @@ import Paper from "../components/paper";
 const Home: NextPage = () => {
   return (
     <Paper
-      header={
-        <div className="container">
-          <div className="columns">
-            <div className="col-6 d-flex just-cont-start">welcome to scratch land</div>
-            <div className="col-6 d-flex just-cont-end">
-              <span className="icon" data-icon="&#xeb7c;" />
-            </div>
-          </div>
-        </div>
-      }
+      header={{ text: "welcome to scratch land", icon: "javascript" }}
       body={
         <div>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita cupiditate pariatur veritatis blanditiis, odit
