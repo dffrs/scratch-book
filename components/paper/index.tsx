@@ -12,13 +12,13 @@ const Paper: FunctionComponent<PaperProps> = ({ header, body, footer, background
   return (
     <div style={{ backgroundColor: `var(--${backgroundColor}-color)` }} className={style.paper}>
       {React.Children.map(header, (child) => (
-        <div>{child}</div>
+        <div className={style.header}>{child}</div>
       ))}
       {React.Children.map(body, (child) => (
-        <div>{child}</div>
+        <div className={style.body}>{child}</div>
       ))}
       {React.Children.map(footer, (child) => (
-        <div>{child}</div>
+        <div className={style.footer}>{child}</div>
       ))}
     </div>
   );
