@@ -2,6 +2,7 @@ import Router from "next/router";
 import React, { FunctionComponent, memo, useCallback, useMemo } from "react";
 import { Routes } from "../../utils/common";
 import Drawer from "../drawer";
+import Main from "../main";
 import { ButtonsName, drawerButtons } from "./util";
 
 type LayoutProps = {
@@ -31,7 +32,7 @@ const Layout: FunctionComponent<LayoutProps> = ({ children }) => {
   return (
     <>
       <Drawer>{buttonsToRender}</Drawer>
-      <main>{childrenToRender}</main>
+      <Main>{childrenToRender}</Main>
     </>
   );
 };

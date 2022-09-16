@@ -29,6 +29,18 @@ $font-weight-bolder: bolder;
     font-weight: $font-weight-bolder;
 }
 
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.text-lowercase {
+    text-transform: lowercase;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
 $text-color: (primary: var(--primary-color), secondary: var(--secondary-color), neutral: var(--neutral-color), contrast: var(--contrast-color));
 @each $key,
 $value in $text-color {

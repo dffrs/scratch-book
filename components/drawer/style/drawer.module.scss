@@ -5,8 +5,8 @@
     top: 0;
     left: 0;
     width: 100vw;
-    max-height: 2em;
-    min-height: 2em;
+    max-height: var(--unit-4);
+    min-height: var(--unit-4);
     background-color: var(--primary-color);
-    z-index: 100;
+    z-index: 999999;
 }
