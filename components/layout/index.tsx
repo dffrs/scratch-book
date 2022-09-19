@@ -15,6 +15,8 @@ const Layout: FunctionComponent<LayoutProps> = ({ children }) => {
     switch (buttonName) {
       case "inputs":
         return Router.push(Routes.INPUTS);
+      case "store":
+        return Router.push(Routes.CUSTOM_STORE);
       default:
         ((buttonName: never) => {
           throw new Error(`A new button was added - ${buttonName} . Add it to this handler, also.`);
