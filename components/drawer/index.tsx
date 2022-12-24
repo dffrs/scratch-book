@@ -17,7 +17,7 @@ const Drawer: FunctionComponent<DrawerProps> = (props) => {
             <span className="icon text-color-contrast" data-icon="&#xead6;" />
           </div>
           {React.Children.map(props.children, (children) => (
-            <div className="col-3">{children}</div>
+            <div className="col-2">{children}</div>
           ))}
         </div>
       </div>

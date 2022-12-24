@@ -29,7 +29,7 @@ const DisplayValue: FC<{ item: keyof ReturnType<typeof store.getState> }> = ({ i
   );
 };
 const StorePage: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>> = ({ initialState }) => {
-  // store.serverInitialize(initialState);
+  store.serverInitialize(initialState);
   return (
     <Paper
       header={{ text: "store", icon: "store" }}

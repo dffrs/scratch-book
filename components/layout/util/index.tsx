@@ -1,6 +1,6 @@
 import Button from "../../button";
 
-type ButtonsName = "inputs" | "store";
+type ButtonsName = "inputs" | "store" | "playground";
 
 const drawerButtons: Array<React.ReactElement> = [
   <Button key="inputs" name="inputs">
@@ -8,6 +8,9 @@ const drawerButtons: Array<React.ReactElement> = [
   </Button>,
   <Button key="store" name="store">
     store
+  </Button>,
+  <Button key="playground" name="playground">
+    playground
   </Button>,
 ];
 
