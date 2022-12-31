@@ -11,7 +11,8 @@ button,
     padding: .5em 1em;
     cursor: pointer;
     transition: var(--color-transitions);
-    max-width: 16ch;
+    min-width: 10ch;
+    max-width: 26ch;
     &:hover {
         background-color: var(--neutral-color);
     }

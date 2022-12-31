@@ -1,8 +1,8 @@
 enum Routes {
   HOME = "/",
   INPUTS = "/inputs",
-  CUSTOM_STORE = "/store",
   PLAYGROUND = "/playground",
+  STATELESS_CONTEXT = "/statelessContext",
 }
 
 export { Routes };

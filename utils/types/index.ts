@@ -1,3 +1,2 @@
-type CB = (...args: Array<any>) => unknown;
-
+type CB<Args = unknown, Output = unknown> = (...args: Array<Args>) => Output;
 export type { CB };
