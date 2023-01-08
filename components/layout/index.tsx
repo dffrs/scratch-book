@@ -19,9 +19,13 @@ const Layout: FunctionComponent<LayoutProps> = ({ children }) => {
         return Router.push(Routes.PLAYGROUND);
       case "stateless context":
         return Router.push(Routes.STATELESS_CONTEXT);
+      case "observable":
+        return Router.push(Routes.OBSERVABLE);
       default:
         ((buttonName: never) => {
-          throw new Error(`A new button was added - ${buttonName} . Add it to this handler, also.`);
+          throw new Error(
+            `A new button was added - ${buttonName} . Add it to this handler, also.`
+          );
         })(buttonName);
     }
   }, []);
@@ -32,7 +36,10 @@ const Layout: FunctionComponent<LayoutProps> = ({ children }) => {
       });
     });
   }, [handleClick]);
-  const childrenToRender = useMemo(() => React.Children.map(children, (children) => children), [children]);
+  const childrenToRender = useMemo(
+    () => React.Children.map(children, (children) => children),
+    [children]
+  );
   return (
     <>
       <Drawer>{buttonsToRender}</Drawer>

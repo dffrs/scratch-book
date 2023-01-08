@@ -3,6 +3,7 @@ enum Routes {
   INPUTS = "/inputs",
   PLAYGROUND = "/playground",
   STATELESS_CONTEXT = "/statelessContext",
+  OBSERVABLE = "/observable",
 }
 
 export { Routes };

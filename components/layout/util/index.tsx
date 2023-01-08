@@ -1,6 +1,6 @@
 import Button from "../../button";
 
-type ButtonsName = "inputs" | "playground" | "stateless context";
+type ButtonsName = "inputs" | "playground" | "stateless context" | "observable";
 
 const drawerButtons: Array<React.ReactElement> = [
   <Button key="inputs" name="inputs">
@@ -11,6 +11,9 @@ const drawerButtons: Array<React.ReactElement> = [
   </Button>,
   <Button key="stateless context" name="stateless context">
     Stateless Context
+  </Button>,
+  <Button key="observable" name="observable">
+    Observable
   </Button>,
 ];
 
