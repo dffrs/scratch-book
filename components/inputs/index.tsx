@@ -3,7 +3,6 @@ import {
   forwardRef,
   InputHTMLAttributes,
   memo,
-  useEffect,
   useId,
 } from "react";
 import style from "../inputs/style/input.module.scss";
@@ -15,11 +14,6 @@ type InputProps = { label?: string } & DetailedHTMLProps<
 
 const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   const id = useId();
-  useEffect(() => {
-    window.addEventListener("input", () => console.log("I was triggered"));
-    return () =>
-      window.removeEventListener("input", () => console.log("I was triggered"));
-  }, []);
   return (
     <div className="p-relative">
       <input

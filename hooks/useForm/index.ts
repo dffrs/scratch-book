@@ -1,4 +1,4 @@
-import { createRef } from "react";
+import { createRef, useEffect, useState } from "react";
 import { convertToString } from "../../utils/methods";
 const consoleError = (message: string) => {
   if (process.env.NODE_ENV === "development") console.error(message);
@@ -64,6 +64,16 @@ class Form {
     }, {});
   }
 
+  private propagateValue(fieldName: string, value?: unknown) {
+    window.dispatchEvent(
+      new CustomEvent(fieldName, {
+        detail: value ?? this.getValue(fieldName),
+        bubbles: true,
+      })
+    );
+    return;
+  }
+
   private mutateValue(
     ref: RegisterReturnValue["ref"] | undefined,
     value: unknown
@@ -92,7 +102,23 @@ class Form {
     if (!this.registerMap.has(fieldName))
       return consoleError(`${fieldName} not found. Register it, first`);
     this.mutateValue(this.registerMap.get(fieldName)?.ref, value);
+    this.propagateValue(fieldName);
     return;
   }
 }
-export { Form };
+
+const useWatch = (fieldName: string) => {
+  const [value, setValue] = useState();
+  useEffect(() => {
+    window.addEventListener(fieldName, (e: Event) =>
+      setValue((<CustomEvent>e).detail)
+    );
+    return window.removeEventListener(fieldName, (e: Event) =>
+      setValue((<CustomEvent>e).detail)
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  return value;
+};
+export { Form, useWatch };

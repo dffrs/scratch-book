@@ -1,8 +1,30 @@
 import { NextPage } from "next";
-import { memo } from "react";
+import { memo, useEffect } from "react";
 import Inputs from "../../components/inputs";
 import Paper from "../../components/paper";
-import { Form } from "../../hooks/useForm";
+import { Form, useWatch } from "../../hooks/useForm";
+
+const Footer = ({ form }: { form: Form }) => {
+  const value = useWatch("name");
+  useEffect(() => {
+    console.log("value", value);
+  }, [value]);
+  return (
+    <div className="container">
+      <div className="columns">
+        <div className="col-12 d-flex just-cont-end" style={{ gap: "2rem" }}>
+          <button
+            className="text-capitalize"
+            onClick={() => console.log("form.getValues", form.getValues())}
+          >
+            get form values
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const InputsPage: NextPage = () => {
   const form = new Form("test");
   return (
@@ -35,21 +57,14 @@ const InputsPage: NextPage = () => {
             <div className="col-12">
               <Inputs
                 type="checkbox"
-                label="This checkbox should change whenever input text field's value changed"
+                label="This checkbox should change whenever input text field's value is changed"
                 {...form.register("test-checkbox")}
               />
             </div>
           </div>
         </div>
       }
-      footer={
-        <button
-          className="text-capitalize"
-          onClick={() => console.log("form.getValues", form.getValues())}
-        >
-          get form values
-        </button>
-      }
+      footer={<Footer form={form} />}
     />
   );
 };
