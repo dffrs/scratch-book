@@ -1,6 +1,6 @@
 import Button from "../../button";
 
-type ButtonsName = "inputs" | "playground" | "stateless context" | "observable";
+type ButtonsName = "inputs" | "playground" | "stateless context" | "observable" | "prisma playground";
 
 const drawerButtons: Array<React.ReactElement> = [
   <Button key="inputs" name="inputs">
@@ -14,6 +14,9 @@ const drawerButtons: Array<React.ReactElement> = [
   </Button>,
   <Button key="observable" name="observable">
     Observable
+  </Button>,
+  <Button key="prisma playground" name="prisma playground">
+    Prisma Playground
   </Button>,
 ];
 
