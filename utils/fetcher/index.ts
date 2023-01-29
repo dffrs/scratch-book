@@ -1,31 +1,21 @@
 class Fetcher {
-  private goGetItBoy = async <T>(
-    path: string,
-    extra: RequestInit
-  ): Promise<Awaited<T>> => {
+  private goGetItBoy = async <T>(path: string, extra: RequestInit): Promise<Awaited<T>> => {
     const response = await fetch(path, extra);
     if (!response.ok) throw new Error(undefined, { cause: response });
     try {
       return await response.json();
     } catch (error) {
-      return await Promise.reject<T>({} as T);
+      return await Promise.resolve<T>({} as T);
     }
   };
-  public get = async <T>(
-    path: string,
-    extra?: Omit<RequestInit, "body" | "method">
-  ): Promise<Awaited<T>> => {
+  public get = async <T>(path: string, extra?: Omit<RequestInit, "body" | "method">): Promise<Awaited<T>> => {
     const config: RequestInit = {
       ...extra,
       method: "get",
     };
     return await this.goGetItBoy(path, config);
   };
-  public post = async <T, V>(
-    path: string,
-    body: T,
-    extra?: Omit<RequestInit, "body" | "method">
-  ): Promise<Awaited<V>> => {
+  public post = async <T, V>(path: string, body: T, extra?: Omit<RequestInit, "body" | "method">): Promise<Awaited<V>> => {
     try {
       const parsedBody = JSON.stringify(body);
       const config: RequestInit = {
@@ -40,11 +30,7 @@ class Fetcher {
       });
     }
   };
-  public put = async <T, V>(
-    path: string,
-    body: T,
-    extra?: Omit<RequestInit, "body" | "method">
-  ): Promise<Awaited<V>> => {
+  public put = async <T, V>(path: string, body: T, extra?: Omit<RequestInit, "body" | "method">): Promise<Awaited<V>> => {
     try {
       const parsedBody = JSON.stringify(body);
       const config: RequestInit = {
